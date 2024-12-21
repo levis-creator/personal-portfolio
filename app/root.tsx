@@ -5,9 +5,11 @@ import {
   Scripts,
   ScrollRestoration,
 } from "@remix-run/react";
-import type { LinksFunction } from "@remix-run/node";
-
+import { motion } from "motion/react";
+import MainNav from "./components/MainNav";
+import AnimatedCursor from "react-animated-cursor"
 import "./tailwind.css";
+import { LinksFunction } from "@remix-run/node";
 
 export const links: LinksFunction = () => [
   { rel: "preconnect", href: "https://fonts.googleapis.com" },
@@ -31,14 +33,34 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <Meta />
         <Links />
       </head>
-      <body>
+      <motion.body initial={{
+        opacity: 0
+      }}
+        animate={
+          {
+            opacity: 1,
+
+          }
+        }
+        transition={{
+          duration: 2
+        }
+        }>
+          <AnimatedCursor  innerSize={30}/>
+        <MainNav />
+
+
         {children}
+
         <ScrollRestoration />
         <Scripts />
-      </body>
+  
+      </motion.body>
     </html>
   );
 }
+
+
 
 export default function App() {
   return <Outlet />;

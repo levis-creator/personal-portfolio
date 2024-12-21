@@ -1,0 +1,31 @@
+import { NavItem } from './types';
+export const navlist:NavItem[]=[
+    {
+        nav_item:"Home",
+        path:"/"
+    },
+    {
+        nav_item:"about",
+        path:"/about"
+    },
+    {
+        nav_item:"Services",
+        path:"/"
+    },
+    {
+        nav_item:"Skills",
+        path:"/"
+    },
+    {
+        nav_item:"Projects",
+        path:"/"
+    },
+    {
+        nav_item:"Contact",
+        path:"/"
+    },
+    {
+        nav_item:"Blogs",
+        path:"/"
+    },
+]

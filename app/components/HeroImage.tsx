@@ -15,7 +15,7 @@ const HeroImage = ({ image, experience}: {
         y: [-10, 0, 10]
       }}
         className="w-72 h-72 rounded-xl mx-auto overflow-hidden rotate-3 shadow-lg">
-        <img src={image} className="object-cover w-full min-h-full" alt="" />
+        <img data-testid='hero-image' src={image} className="object-cover w-full min-h-full" alt="" />
       </motion.div>
     </div>
   )

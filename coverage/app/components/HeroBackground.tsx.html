@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/11</span>
+                <span class='fraction'>11/11</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/6</span>
+                <span class='fraction'>6/6</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/2</span>
+                <span class='fraction'>2/2</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/11</span>
+                <span class='fraction'>11/11</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line low'></div>
+    <div class='status-line high'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -98,23 +98,23 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">7x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -127,25 +127,25 @@ import medium from '~/assets/bg-laptops.svg'
 import useScreenWidth from '~/hooks/useScreenWidth'
 import { useEffect, useState } from 'react'
 &nbsp;
-const HeroBackground = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >() =&gt; {</span></span>
-    const screenWidth = <span class="cstat-no" title="statement not covered" >useScreenWidth();</span>
-    const [bgImage, setBgImage] = <span class="cstat-no" title="statement not covered" >useState&lt;string&gt;(large); // Default to `large` for SSR</span>
+const HeroBackground = () =&gt; {
+    const screenWidth = useScreenWidth();
+    const [bgImage, setBgImage] = useState&lt;string&gt;(large); // Default to `large` for SSR
   
-<span class="cstat-no" title="statement not covered" >    useEffect(<span class="fstat-no" title="function not covered" >() =&gt; {</span></span>
-<span class="cstat-no" title="statement not covered" >      if (screenWidth !== undefined) {</span>
+    useEffect(() =&gt; {
+      if (screenWidth !== undefined) {
         // Dynamically update the background image based on screen width
-<span class="cstat-no" title="statement not covered" >        if (screenWidth &lt; 640) {</span>
-<span class="cstat-no" title="statement not covered" >          setBgImage(mobile);</span>
-<span class="cstat-no" title="statement not covered" >        } else if (screenWidth &lt; 768) {</span>
-<span class="cstat-no" title="statement not covered" >          setBgImage(medium);</span>
+        if (screenWidth &lt; 640) {
+          setBgImage(mobile);
+        } else if (screenWidth &lt; 768) {
+          setBgImage(medium);
         } else {
-<span class="cstat-no" title="statement not covered" >          setBgImage(large);</span>
+          setBgImage(large);
         }
       }
     }, [screenWidth]);
-<span class="cstat-no" title="statement not covered" >    return (</span>
+    return (
         &lt;div className="absolute top-0 right-0 bottom-0 left-0 -z-10"&gt;
-            &lt;img src={bgImage} alt="" className="w-full h-full object-cover" /&gt;
+            &lt;img data-testId='background' src={bgImage} alt="" className="w-full h-full object-cover" /&gt;
         &lt;/div&gt;
     )
 }
@@ -157,7 +157,7 @@ export default HeroBackground</pre></td></tr></table></pre>
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2024-12-21T18:32:22.935Z
+                at 2024-12-21T22:16:03.770Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

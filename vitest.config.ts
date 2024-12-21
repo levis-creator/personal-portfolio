@@ -5,6 +5,7 @@ export default defineConfig({
   test: {
     globals: true,
     environment: 'jsdom',
+    
     coverage: {
         enabled: true,
         provider: 'istanbul' ,
@@ -15,5 +16,9 @@ export default defineConfig({
       },
       setupFiles:"app/tests/setup.ts"
   },
-
+  resolve: {
+    alias: {
+      '~': '/app', // Ensure this matches your alias for ~/ in Vite
+    },
+  },
 });

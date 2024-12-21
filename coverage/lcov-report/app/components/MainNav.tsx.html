@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/6</span>
+                <span class='fraction'>6/6</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/4</span>
+                <span class='fraction'>4/4</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/4</span>
+                <span class='fraction'>4/4</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/5</span>
+                <span class='fraction'>5/5</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line low'></div>
+    <div class='status-line high'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -120,21 +120,21 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">9x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -168,12 +168,12 @@ import { AnimatePresence } from "motion/react";
 import { navlist } from "~/lib/navlist";
 import DropDownMenu from "./DropDownMenu";
 &nbsp;
-const MainNav = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >() =&gt; {</span></span>
-    const [openMenu, setOpenMenu]= <span class="cstat-no" title="statement not covered" >useState(false);</span>
-    function <span class="fstat-no" title="function not covered" >handleMenuOpen() {</span>
-<span class="cstat-no" title="statement not covered" >        setOpenMenu(<span class="fstat-no" title="function not covered" >open=&gt;<span class="cstat-no" title="statement not covered" >!</span>open)</span></span>
+const MainNav = () =&gt; {
+    const [openMenu, setOpenMenu]= useState(false);
+    function handleMenuOpen() {
+        setOpenMenu(open=&gt;!open)
     }
-<span class="cstat-no" title="statement not covered" >  return (</span>
+  return (
     &lt;header className="fixed top-0 left-0 right-0 bottom-auto z-10"&gt;
         &lt;nav className="container flex items-center justify-between gap-10 mx-auto px-5 py-5 md:py-10 md:px-10 lg:px-12"&gt;
             {/* logo */}
@@ -181,8 +181,8 @@ const MainNav = <span class="cstat-no" title="statement not covered" ><span clas
             {/* navitem */}
             &lt;ul className="hidden md:inline-flex gap-6 "&gt;
                 {
-                    navlist.map(<span class="fstat-no" title="function not covered" >(n</span>avitem, i)=&gt;(
-<span class="cstat-no" title="statement not covered" >                        &lt;li key={i}&gt;</span>
+                    navlist.map((navitem, i)=&gt;(
+                        &lt;li key={i}&gt;
                             &lt;NavLink to={navitem.path} &gt;{navitem.nav_item}&lt;/NavLink&gt;
                         &lt;/li&gt;
                     ))
@@ -214,7 +214,7 @@ export default MainNav</pre></td></tr></table></pre>
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2024-12-21T18:32:23.243Z
+                at 2024-12-21T22:16:03.871Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

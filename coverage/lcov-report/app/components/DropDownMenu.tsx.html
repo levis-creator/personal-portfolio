@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/5</span>
+                <span class='fraction'>5/5</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/1</span>
+                <span class='fraction'>0/0</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/2</span>
+                <span class='fraction'>2/2</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/5</span>
+                <span class='fraction'>5/5</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line low'></div>
+    <div class='status-line high'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -136,8 +136,8 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -153,15 +153,11 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -182,7 +178,11 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">9x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -201,8 +201,8 @@ interface DropDownMenuProps {
   handleClose: () =&gt; void;
   navitems: NavItem[];
 }
-const DropDownMenu: FC&lt;DropDownMenuProps&gt; = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >({</span> handleClose, navitems = <span class="branch-0 cbranch-no" title="branch not covered" >[] }</span>) =&gt; {</span>
-  const list = <span class="cstat-no" title="statement not covered" >{</span>
+const DropDownMenu: FC&lt;DropDownMenuProps&gt; = ({ handleClose, navitems }) =&gt; {
+  const list = {
     hidden: {
       x: 0,
       opacity: 1,
@@ -218,12 +218,12 @@ const DropDownMenu: FC&lt;DropDownMenuProps&gt; = <span class="cstat-no" title="
     },},
     exit: { opacity: 0, scales: 0, transform: "translate(100px, -100px)" }
   }
-  const items = <span class="cstat-no" title="statement not covered" >{</span>
+  const items = {
     visible: { opacity: 1, x: 0 },
     hidden: { opacity: 0, x: -100 },
   }
-<span class="cstat-no" title="statement not covered" >  return (</span>
-    &lt;motion.div variants={list} initial="hidden" exit="exit" whileInView="visible" className="fixed top-0 right-0 left-0 bottom-0 bg-blue-800 text-white z-50"&gt;
+  return (
+    &lt;motion.div data-testId="dropdown-menu" variants={list} initial="hidden" exit="exit" whileInView="visible" className="fixed top-0 right-0 left-0 bottom-0 bg-blue-800 text-white z-50"&gt;
       &lt;div className="flex py-8 px-4 justify-end"&gt;
         &lt;motion.button
           onClick={handleClose}
@@ -246,8 +246,8 @@ const DropDownMenu: FC&lt;DropDownMenuProps&gt; = <span class="cstat-no" title="
         variants={list}
         className="flex flex-col mx-20 items-end gap-4 "&gt;
         {
-          navitems.map(<span class="fstat-no" title="function not covered" >(i</span>tem, i) =&gt; (
-<span class="cstat-no" title="statement not covered" >            &lt;motion.li variants={items} className="block w-full text-right py-3 px-4 rounded-md cursor-pointer" key={i}&gt;</span>
+          navitems.map((item, i) =&gt; (
+            &lt;motion.li variants={items} className="block w-full text-right py-3 px-4 rounded-md cursor-pointer" key={i}&gt;
               {item.nav_item}
             &lt;/motion.li&gt;
           ))
@@ -265,7 +265,7 @@ export default DropDownMenu</pre></td></tr></table></pre>
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2024-12-21T18:32:23.243Z
+                at 2024-12-21T22:16:03.871Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

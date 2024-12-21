@@ -6,7 +6,7 @@ interface DropDownMenuProps {
   handleClose: () => void;
   navitems: NavItem[];
 }
-const DropDownMenu: FC<DropDownMenuProps> = ({ handleClose, navitems = [] }) => {
+const DropDownMenu: FC<DropDownMenuProps> = ({ handleClose, navitems }) => {
   const list = {
     hidden: {
       x: 0,
@@ -28,7 +28,7 @@ const DropDownMenu: FC<DropDownMenuProps> = ({ handleClose, navitems = [] }) => 
     hidden: { opacity: 0, x: -100 },
   }
   return (
-    <motion.div variants={list} initial="hidden" exit="exit" whileInView="visible" className="fixed top-0 right-0 left-0 bottom-0 bg-blue-800 text-white z-50">
+    <motion.div data-testId="dropdown-menu" variants={list} initial="hidden" exit="exit" whileInView="visible" className="fixed top-0 right-0 left-0 bottom-0 bg-blue-800 text-white z-50">
       <div className="flex py-8 px-4 justify-end">
         <motion.button
           onClick={handleClose}
